@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Rotator : MonoBehaviour
 {
-    [Tooltip("speed of rotation")][SerializeField] float speed = 1f;
+    [Tooltip("speed of rotation")][SerializeField] float speed = 50f;
     [Tooltip("Direction of rotation(the default is'right')")] [SerializeField] string direction;
     // Start is called before the first frame update
     void Start()

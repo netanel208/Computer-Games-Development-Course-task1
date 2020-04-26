@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class beating : MonoBehaviour
+public class Beating : MonoBehaviour
 {
     [SerializeField] float max_size = 1f;
     [SerializeField] float speed_beating = 1f;

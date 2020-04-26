@@ -8,7 +8,7 @@ using UnityEngine;
 
 public class Oscillator : MonoBehaviour
 {
-    [SerializeField] float speed = 1;
+    [SerializeField] float speed = 50;
     //[Tooltip("Deceleration rate of speed")] [SerializeField] float deceleration_rate = 1;
     [Tooltip("The direction of object oscillator(the default is 'right')")][SerializeField] string direction;
     Vector3 object_position;
