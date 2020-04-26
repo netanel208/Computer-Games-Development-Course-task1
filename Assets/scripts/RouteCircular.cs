@@ -5,7 +5,7 @@ using UnityEngine;
 public class RouteCircular : MonoBehaviour
 {
     private Vector3 position;
-    [Tooltip("movement speed")][SerializeField] private float speed = 1f;
+    [Tooltip("movement speed")][SerializeField] private float speed = 2f;
     private bool direction = true;
 
 
@@ -26,6 +26,18 @@ public class RouteCircular : MonoBehaviour
         {
             direction = false;
         }
+
+        if(direction)
+            speed += Time.deltaTime;
+        else
+            speed -= Time.deltaTime;
+
+
+            float x = Mathf.Cos(speed);
+            float y = Mathf.Sin(speed);
+            float z = 0;
+            transform.position = new Vector3(x, y, z);
+        
 
     }
 
