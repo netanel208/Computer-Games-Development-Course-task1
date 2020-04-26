@@ -7,12 +7,14 @@ public class RouteCircular : MonoBehaviour
     private Vector3 position;
     [Tooltip("movement speed")][SerializeField] private float speed = 2f;
     private bool direction = true;
-
+    [Tooltip("radius")] [SerializeField] private float radius = 5f;
+    private float dirObje;
 
     // Start is called before the first frame update
-      void Start()
+    void Start()
      {
           position = transform.position;
+        dirObje = speed;
     }
 
     // Update is called once per frame
@@ -27,16 +29,16 @@ public class RouteCircular : MonoBehaviour
             direction = false;
         }
 
-        if(direction)
-            speed += Time.deltaTime;
+        if(!direction)
+            dirObje += Time.deltaTime;
         else
-            speed -= Time.deltaTime;
+            dirObje -= Time.deltaTime;
 
 
-            float x = Mathf.Cos(speed);
-            float y = Mathf.Sin(speed);
+            float x = Mathf.Cos(dirObje) * radius;
+            float y = Mathf.Sin(dirObje) * radius;
             float z = 0;
-            transform.position = new Vector3(x, y, z);
+            transform.position = position+new Vector3(x, y, z);
         
 
     }

@@ -6,10 +6,10 @@ using Unity.Mathematics;
 using UnityEditor.EditorTools;
 using UnityEngine;
 
+
 public class Oscillator : MonoBehaviour
 {
-    [SerializeField] float speed = 50;
-    //[Tooltip("Deceleration rate of speed")] [SerializeField] float deceleration_rate = 1;
+    [SerializeField] float speed = 40;
     [Tooltip("The direction of object oscillator(the default is 'right')")][SerializeField] string direction;
     Vector3 object_position;
     float min_x_bound;
@@ -25,6 +25,7 @@ public class Oscillator : MonoBehaviour
         var size = GameObject.Find("Main Camera").GetComponent<Camera>().orthographicSize * Screen.width / Screen.height;
         min_x_bound = camera_pos.x - size;
         max_x_bound = camera_pos.x + size;
+
         Debug.Log("camera_pos = "+ camera_pos+ " min_x_bound = " + min_x_bound + " max_x_bound = " + max_x_bound);
     }
 
@@ -55,4 +56,5 @@ public class Oscillator : MonoBehaviour
             transform.position += new Vector3(slow, 0, 0);
         }
     }
+
 }
