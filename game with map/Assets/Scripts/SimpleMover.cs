@@ -14,13 +14,21 @@ public class SimpleMover : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.UpArrow))
+        {
+            transform.position += Vector3.forward * Time.deltaTime * speed;
+        }
+        if (Input.GetKeyDown(KeyCode.DownArrow))
+        {
+            transform.position += Vector3.back * Time.deltaTime * speed;
+        }
         if (Input.GetKeyDown(KeyCode.RightArrow))
         {
-            transform.position += new Vector3(1*Time.deltaTime*speed,0,0);
+            transform.position += Vector3.right * Time.deltaTime * speed;
         }
         if(Input.GetKeyDown(KeyCode.LeftArrow))
         {
-            transform.position += new Vector3((-1)*Time.deltaTime*speed,0,0);
+            transform.position += Vector3.left * Time.deltaTime * speed;
         }
     }
 }
